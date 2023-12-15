@@ -1,0 +1,35 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Commande </div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="container">
+
+
+      <a href="#" routerLink="/ajouterCommande" (click)="submit()" class="btn btn-success">Ajouter Commande</a>
+
+      <table class="table table-bordered" border="2">
+        <tr border="2">
+          <th>ID</th>
+          <th>date</th>
+
+          <th width="220px">Action</th>
+        </tr>
+        <tr  *ngFor="let c of commande"  >
+          <td class="a">{{ c.id }}</td>
+          <td class="a">{{ c.date }}</td>
+
+
+
+
+          <td>
+
+            <a href="#"  [routerLink]="[ c.id, 'ligneCommande']" class="btn btn-primary">Editer</a>
+            <button type="button" (click)="deleteCommande(c.id)" class="btn btn-danger">Supprimer Commande</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+

@@ -1,0 +1,75 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Detail Article </div>
+  <div class="page__content shadow p-3 position-relative">
+
+<div class="container" >
+
+  <a href="#" routerLink="/liste" class="btn btn-primary">Retour</a>
+
+  <div class="form-group">
+    <img class="image" src="/assets/image/{{article.image}}">
+  </div>
+
+
+  <div class="form-group">
+      <strong ><label class="aa" [(ngModel)]="selectedA" >ID :</label>  {{ article.id }}  </strong>
+
+
+  </div>
+
+  <div class="form-group">
+      <strong ><label class="aa"> Désignation :</label> {{ article.desgnArt }}</strong>
+
+  </div >
+
+  <div class="form-group">
+      <strong><label class="aa">Prix :</label> {{ article.prix }}</strong>
+
+  </div>
+
+  <div class="form-group">
+    <strong> <label class="aa">AncienPrix :</label> {{ article.ancienPrix }}</strong>
+
+  </div>
+
+  <div class="form-group">
+    <strong> <label class="aa"> Etat : </label> {{ article.etat }}</strong>
+
+  </div>
+
+  <div class="form-group">
+    <strong> <label class="aa"> DureeGarantie : </label> {{ article.dureeGarantie }}</strong>
+
+  </div>
+
+  <div class="form-group">
+    <strong> <label class="aa"> RefInternational : </label> {{ article.refInternational }}</strong>
+
+  </div>
+
+  <div class="form-group">
+    <strong> <label class="aa"> Livraison:</label> {{ article.livraison }}</strong>
+
+  </div>
+
+ <div class="form-group">
+    <strong> <label class="bb" > id_SF:</label> {{ article.id_SF }}</strong>
+
+  </div>
+
+  <div  class="form-group"  >
+    <strong > <label class="bb" [(ngModel)]="article.id_SF"  > Nom Sous Famille:</label> {{ nom_Sous_Famille }} </strong>
+  </div>
+
+
+  <div class="form-group" class="row" *ngFor="let article of artcaract">
+    <div class="col-lg-4"> <label>  ID Caracteristique : {{ article.id_caract }} </label></div>
+  <div class="col-lg-4"> <label [(ngModel)]="article.id_caract"  > Nom Caracteristique : {{ nomCaract }} </label></div> 
+    <div class="col-lg-4"><label > Valeur : {{ article.valeur }} </label></div>
+  </div>
+
+
+</div>
+</div>
+</div>
+

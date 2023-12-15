@@ -1,0 +1,42 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Detail Commande </div>
+  <div class="page__content shadow p-3 position-relative">
+
+    <div class="container">
+
+      <a href="#" routerLink="/gestion-commande" class="btn btn-primary">Liste Commande</a>
+
+      <div class="form-group">
+          <strong ><label class="aa">code Commande :</label>  {{ commande.id }}  </strong>
+      </div>
+
+      <div class="form-group">
+          <strong ><label class="aa"> Date Commande :</label> {{ commande.date }}</strong>
+      </div >
+      <div class="form-group">
+        <strong ><label class="aa"> Id client :</label> {{ commande.id_client }}</strong>
+    </div >
+
+      <div class="form-group">
+        <strong ><label class="bb" > Nom Client :</label> {{ nom_client }}</strong>
+      </div >
+      <div class="form-group">
+        <strong ><label class="bb" > Adress Client :</label> {{ ad }}</strong>
+      </div >
+
+      <div >
+        </div>
+
+
+      <div class="form-group" class="row" *ngFor="let article of lignec">
+        <div class="col-lg-4"> <label > ID Article :{{ article.id_art }} </label></div>
+       <div class="col-lg-4"> <label > Nom Article :{{ nom_art }} </label></div> 
+        <div class="col-lg-4"><label > Quantite:{{ article.quantite }} </label></div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+

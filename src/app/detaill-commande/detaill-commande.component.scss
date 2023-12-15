@@ -1,0 +1,38 @@
+.page {
+  color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+    &__box{
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-bottom: 1px;
+        min-height: 50px;
+        background: #77174a;
+        margin: 0 -1rem;
+        font-size: 20px;
+    }
+  }
+
+  .form-group{
+    color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .btn-primary{
+    font-size: 12px;
+    background-color:darkgreen;
+      border:  solid ;
+  }
+  .aa{
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #77174a;
+  }
+  .bb{
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #eb1386d4;
+  }
+  table, th, td {
+    border: 2px solid black;
+
+  }

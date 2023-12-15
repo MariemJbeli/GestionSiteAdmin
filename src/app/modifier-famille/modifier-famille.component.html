@@ -1,0 +1,44 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Modifier Famille </div>
+  <div class="page__content shadow p-3 position-relative">
+
+<div class="container">
+
+
+  <a href="#" routerLink="/famille" class="btn btn-primary">Retour</a>
+
+  <form  [formGroup]="form">
+
+      <div class="form-group">
+          <label for="nomF">nom Famille:</label>
+          <input
+              formControlName="nomF"
+              id="nomF"
+              type="text"
+              [(ngModel)]="famille.nomF"
+              class="form-control">
+          <div *ngIf="f['nomF'].touched && f['nomF'].invalid" class="alert alert-danger">
+              <div *ngIf="f['nomF'].errors && f['nomF'].errors['required']">nom famille is required.</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="id_cat">ID Categorie:</label>
+        <input
+            formControlName="id_cat"
+            id="id_cat"
+            type="number"
+            [(ngModel)]="famille.id_cat"
+            class="form-control">
+        <div *ngIf="f['id_cat'].touched && f['id_cat'].invalid" class="alert alert-danger">
+            <div *ngIf="f['id_cat'].errors && f['id_cat'].errors['required']">id categorie is required.</div>
+        </div>
+      </div>
+
+
+      <button class="btn btn-primary" (click)="submit()" type="submit" [disabled]="!form.valid">Modifier</button>
+  </form>
+</div>
+
+</div>
+</div>

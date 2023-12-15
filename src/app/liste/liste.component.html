@@ -1,0 +1,52 @@
+<div class="container-fluid page">
+    <div class="page__box p-3 mt-2"> Liste d'Article </div>
+    <div class="page__content shadow p-3 position-relative">
+      <div class="container">
+
+        <div>
+        <a href="#" routerLink="/ajouter" class="btn btn-success">Ajouter Article</a>
+
+        <div class="search-name" >
+          <div class="col-lg-4">
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" placeholder=" Recherche un article  ">
+          </div>
+        <table class="table">
+          <tbody>
+            <tr class="table-active">
+              <th>ID</th>
+            <th>Désignation Article</th>
+            <th>Prix</th>
+            <th>Ancien Prix</th>
+            <th>Etat</th>
+            <th>DureeGarantie</th>
+            <th>RefInternational</th>
+            <th>Livraison</th>
+            <th>Nom sous famille</th>
+
+            <th width="200px">Action</th>
+            </tr>
+            <tr *ngFor="let article of articles | filter:searchText"  >
+              <td>{{ article.id }}</td>
+              <td>{{ article.desgnArt }}</td>
+              <td>{{ article.prix }}</td>
+              <td>{{ article.ancienPrix }}</td>
+              <td>{{article.etat}}</td>
+              <td>{{article.dureeGarantie}}</td>
+              <td>{{article.refInternational}}</td>
+              <td>{{article.livraison}}</td>
+              <td>{{article.id_SF}}</td>
+
+              <td>
+                <a href="#" [routerLink]="[ article.id, 'detail']" class="btn btn-info">Détail</a>
+                <a href="#"  [routerLink]="[ article.id, 'modifier']" class="btn btn-primary">Modifier</a>
+                <button type="button" (click)="deleteArticle(article.id)" class="btn btn-danger">Supprimer</button>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+</div>
+

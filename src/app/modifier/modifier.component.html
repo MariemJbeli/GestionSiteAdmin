@@ -1,0 +1,199 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Modifier Article </div>
+  <div class="page__content shadow p-3 position-relative">
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+
+      <a href="#" routerLink="/liste" class="btn btn-primary">Retour</a>
+
+      <form  [formGroup]="form">
+
+          <div class="form-group">
+              <label for="desgnArt">Désignation:</label>
+              <input
+                  formControlName="desgnArt"
+                  id="desgnArt"
+                  type="text"
+                  [(ngModel)]="article.desgnArt"
+                  class="form-control">
+              <div *ngIf="f['desgnArt'].touched && f['desgnArt'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['desgnArt'].errors && f['desgnArt'].errors['required']">desgnArt is required.</div>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label for="prix">prix:</label>
+            <input
+                formControlName="prix"
+                id="prix"
+                type="number"
+                [(ngModel)]="article.prix"
+                class="form-control">
+            <div *ngIf="f['prix'].touched && f['prix'].invalid" class="alert alert-danger">
+                <div *ngIf="f['prix'].errors && f['prix'].errors['required']">prix is required.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ancienPrix">ancienPrix:</label>
+            <input
+                formControlName="ancienPrix"
+                id="ancienPrix"
+                type="number"
+                [(ngModel)]="article.ancienPrix"
+                class="form-control">
+            <div *ngIf="f['ancienPrix'].touched && f['ancienPrix'].invalid" class="alert alert-danger">
+                <div *ngIf="f['ancienPrix'].errors && f['ancienPrix'].errors['required']">ancienPrix is required.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="etat">etat:</label>
+            <input
+                formControlName="etat"
+                id="etat"
+                type="text"
+                [(ngModel)]="article.etat"
+                class="form-control">
+            <div *ngIf="f['etat'].touched && f['etat'].invalid" class="alert alert-danger">
+                <div *ngIf="f['etat'].errors && f['etat'].errors['required']">etat is required.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="dureeGarantie">dureeGarantie:</label>
+            <input
+                formControlName="dureeGarantie"
+                id="dureeGarantie"
+                type="text"
+                [(ngModel)]="article.dureeGarantie"
+                class="form-control">
+            <div *ngIf="f['dureeGarantie'].touched && f['dureeGarantie'].invalid" class="alert alert-danger">
+                <div *ngIf="f['dureeGarantie'].errors && f['dureeGarantie'].errors['required']">dureeGarantie is required.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="refInternational">refInternational:</label>
+            <input
+                formControlName="refInternational"
+                id="refInternational"
+                type="text"
+                [(ngModel)]="article.refInternational"
+                class="form-control">
+            <div *ngIf="f['refInternational'].touched && f['refInternational'].invalid" class="alert alert-danger">
+                <div *ngIf="f['refInternational'].errors && f['refInternational'].errors['required']">refInternational is required.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="livraison">livraison:</label>
+            <input
+                formControlName="livraison"
+                id="livraison"
+                type="text"
+                [(ngModel)]="article.livraison"
+                class="form-control">
+            <div *ngIf="f['livraison'].touched && f['livraison'].invalid" class="alert alert-danger">
+                <div *ngIf="f['livraison'].errors && f['livraison'].errors['required']">livraison is required.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="id_SF">id sous famille:</label>
+            <input
+                formControlName="id_SF"
+                id="id_SF"
+                type="number"
+                [(ngModel)]="article.id_SF"
+                class="form-control">
+            <div *ngIf="f['id_SF'].touched && f['id_SF'].invalid" class="alert alert-danger">
+                <div *ngIf="f['id_SF'].errors && f['id_SF'].errors['required']">id_SF is required.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="image">Image:</label>
+            <input
+                formControlName="image"
+                id="image"
+                type="string"
+                [(ngModel)]="article.image"
+                class="form-control">
+            <div *ngIf="f['image'].touched && f['image'].invalid" class="alert alert-danger">
+                <div *ngIf="f['image'].errors && f['image'].errors['required']"> is required.</div>
+            </div>
+          </div>
+
+
+
+          <button class="btn btn-primary" (click)="submitM()" type="submit" [disabled]="!form.valid">Modifier</button>
+      </form>
+      <div *ngIf="alertM" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Article Modifier </strong>
+        <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-lg-6" style='padding-top:5%'>
+
+      <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Caractéristique Spécifique Ajouter</strong>
+        <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <strong class="l">Caractéristique Spécifique:</strong>
+      <form  [formGroup]="form">
+        <div class="form-group">
+          <label for="id_art">ID article:</label>
+          <input
+              formControlName="id_art"
+              id="id_art"
+              type="number"
+              [(ngModel)]="article.id"
+              class="form-control">
+          <div *ngIf="f['id_art'].touched && f['id_art'].invalid" class="alert alert-danger">
+            <div *ngIf="f['id_art'].errors && f['id_art'].errors['required']">id is required.</div>
+          </div>
+        </div>
+
+            <label for="caract" class="m">Id_caract</label>
+            <div class="input-group input-group-sm mb-3">
+              <select formControlName="id_caract">
+                <option value="0">--select caracteristique --</option>
+                <ng-container *ngFor="let caract of caract" >
+                  <option  [value]="caract.id" >{{caract.desgnCaract}}
+
+                  </option>
+
+                </ng-container>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="valeur">Valeur:</label>
+              <input
+                  formControlName="valeur"
+                  id="valeur"
+                  type="text"
+                  class="form-control">
+              <div *ngIf="f['valeur'].touched && f['valeur'].invalid" class="alert alert-danger">
+                <div *ngIf="f['valeur'].errors && f['valeur'].errors['required']">valeur is required.</div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" (click)="submitA()" type="submit" [disabled]="!form.valid">Ajouter</button>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>

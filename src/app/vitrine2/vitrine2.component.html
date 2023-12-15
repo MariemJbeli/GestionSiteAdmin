@@ -1,0 +1,44 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Vitrine
+    <strong class='i'><a href="#" routerLink="/commande" (click)="submit()">Commande</a>
+     <a href="#" routerLink="/vitrine"> Déconnexion</a></strong>
+  </div>
+
+  <div class="page__content shadow p-3 position-relative">
+    <div class="container">
+
+
+    <div class="container">
+        <h1 class ="ll">Recherche un article</h1>
+        <div class="search-name">
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" placeholder=" SEARCH  ">
+        </div>
+
+        <label class="l">Liste Article </label>
+        <table class="table table-bordered" border="2">
+          <tr border="2">
+            <th>id</th>
+            <th>Désignation Article</th>
+            <th>Prix</th>
+            <th >Image</th>
+            <th >Action</th>
+          </tr>
+          <tr  *ngFor="let article of articles | filter:searchText"  >
+            <td>{{ article.id }}</td>
+            <td>{{ article.desgnArt }}</td>
+            <td>{{ article.prix }}</td>
+            <td style= "padding-right:50%"><img class="image" src="/assets/image/{{article.image.slice(12)}}"/></td>
+
+
+            <td>
+              <a href="#" [routerLink]="[ article.id, 'detail']" class="btn btn-info">Détail</a>
+
+            </td>
+          </tr>
+        </table>
+    </div>
+
+
+  </div>
+</div>
+

@@ -1,0 +1,78 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Edition Commande </div>
+  <div class="page__content shadow p-3 position-relative">
+
+<div class="container">
+ 
+
+  <div class="row">
+
+  <form  [formGroup]="form">
+
+    <div class="form-group">
+    <div class="col-lg-2">
+        <label for="id_com">ID commande:</label>
+        <input
+            formControlName="id_com"
+            id="id_com"
+            type="number"
+            [(ngModel)]="comande.id"
+            class="form-control">
+        <div *ngIf="f['id_com'].touched && f['id_com'].invalid" class="alert alert-danger">
+          <div *ngIf="f['id_com'].errors && f['id_com'].errors['required']">id_com is required.</div>
+        </div>
+      </div>
+    </div>
+
+      <div class="form-group">
+        <div class="col-lg-4">
+        <label for="article" class="m">Article</label>
+            <div class="input-group input-group-sm mb-3">
+              <select   formControlName="id_art" >
+                <option [value]="null" disabled  >--select Article --</option>
+                <option *ngFor="let art of article"
+                [value]="art.id"
+                >{{art.desgnArt}}</option>
+              </select>
+            </div>
+          </div>
+
+            <div class="col-lg-2">
+            <label for="quantite">Quantite:</label>
+            <input
+            formControlName="quantite"
+                id="quantite"
+                type="number"
+
+                class="form-control">
+            <div *ngIf="f['quantite'].touched && f['quantite'].invalid" class="alert alert-danger">
+                <div *ngIf="f['quantite'].errors && f['quantite'].errors['required']">quantite is required.</div>
+            </div>
+            </div>
+          </div>
+
+
+          <a href="#" [routerLink]="[ comande.id, 'ligneCommande']" class="btn btn-primary">
+          <button class="btn btn-primary" (click)="submit()" type="submit" [disabled]="!form.valid">Ajouter</button>
+          </a>
+        </form>
+      </div>
+  <table class="table table-bordered" border="2">
+    <tr border="2">
+      <th>Désignation Article</th>
+      <th>Quantite</th>
+
+      <th width="220px">Action</th>
+    </tr>
+    <tr  *ngFor="let c of lcommande"  >
+      <td>{{ c.id_art }}</td>
+      <td>{{ c.quantite }}</td>
+
+
+
+      <td>
+        <button type="button" (click)="deleteArticle(c.id)" class="btn btn-danger">Supprimer</button>
+      </td>
+    </tr>
+  </table>
+</div>

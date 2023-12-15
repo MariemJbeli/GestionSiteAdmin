@@ -1,0 +1,59 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Modifier Caracteristique </div>
+  <div class="page__content shadow p-3 position-relative">
+
+<div class="container">
+
+
+  <a href="#" routerLink="/caracteristique" class="btn btn-primary">Retour</a>
+
+  <form  [formGroup]="form">
+
+      <div class="form-group">
+          <label for="desgnCaract">Désignation:</label>
+          <input
+              formControlName="desgnCaract"
+              id="desgnCaract"
+              type="text"
+              [(ngModel)]="caract.desgnCaract"
+              class="form-control">
+          <div *ngIf="f['desgnCaract'].touched && f['desgnCaract'].invalid" class="alert alert-danger">
+              <div *ngIf="f['desgnCaract'].errors && f['desgnCaract'].errors['required']">desgnCaract is required.</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="libelle">libelle:</label>
+        <input
+            formControlName="libelle"
+            id="libelle"
+            type="text"
+            [(ngModel)]="caract.libelle"
+            class="form-control">
+        <div *ngIf="f['libelle'].touched && f['libelle'].invalid" class="alert alert-danger">
+            <div *ngIf="f['libelle'].errors && f['libelle'].errors['required']">libelle is required.</div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="id_mod">id_mod:</label>
+        <input
+            formControlName="id_mod"
+            id="id_mod"
+            type="number"
+            [(ngModel)]="caract.id_mod"
+            class="form-control">
+        <div *ngIf="f['id_mod'].touched && f['id_mod'].invalid" class="alert alert-danger">
+            <div *ngIf="f['id_mod'].errors && f['id_mod'].errors['required']">id_SF is required.</div>
+        </div>
+      </div>
+
+
+
+      <button class="btn btn-primary" (click)="submit()" type="submit" [disabled]="!form.valid">Modifier</button>
+  </form>
+</div>
+
+</div>
+</div>

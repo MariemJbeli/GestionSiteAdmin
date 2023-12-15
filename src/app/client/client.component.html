@@ -1,0 +1,36 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> client </div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="container">
+
+
+
+
+      <table class="table table-bordered" border="2">
+        <tr border="2">
+          <th>ID</th>
+          <th>Nom et Prenom</th>
+          <th>Email</th>
+          <th>Adresse</th>
+
+          <th width="220px">Action</th>
+        </tr>
+        <tr  *ngFor="let clientt of clientt"  >
+          <td class="a">{{ clientt.id }}</td>
+          <td class="a">{{ clientt.nomPrenom }}</td>
+          <td class="a">{{ clientt.email }}</td>
+          <td class="a">{{ clientt.adress }}</td>
+
+
+          <td>
+
+         
+            <button type="button" (click)="deleteClient(clientt.id)" class="btn btn-danger">Supprimer Client</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+

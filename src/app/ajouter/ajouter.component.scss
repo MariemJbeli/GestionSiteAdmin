@@ -1,0 +1,31 @@
+.page {
+  color: white ;
+  padding: 0 1rem;
+  background: #f1f5f9;
+  &__box{
+      padding-top: 15px;
+      padding-left: 20px;
+      padding-bottom: 1px;
+      min-height: 50px;
+      background: #77174a;
+      margin: 0 -1rem;
+      font-size: 20px;
+  }
+}
+.form-group{
+  color: black;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.btn-primary{
+  font-size: 12px;
+  background-color:darkgreen;
+    border:  solid ;
+}
+.form-control{
+  height: 30px;
+  width: 300px;
+  font-size: 12px;
+}
+.fieldset{
+  background-color: black;
+}

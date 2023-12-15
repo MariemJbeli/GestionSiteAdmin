@@ -1,0 +1,45 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Modifier Sous Famille </div>
+  <div class="page__content shadow p-3 position-relative">
+
+<div class="container">
+
+
+  <a href="#" routerLink="/sous-famille" class="btn btn-primary">Retour</a>
+
+  <form  [formGroup]="form">
+
+      <div class="form-group">
+          <label for="nomSF">nom sous Famille:</label>
+          <input
+              formControlName="nomSF"
+              id="nomSF"
+              type="text"
+              [(ngModel)]="sousf.nomSF"
+              class="form-control">
+          <div *ngIf="f['nomSF'].touched && f['nomSF'].invalid" class="alert alert-danger">
+              <div *ngIf="f['nomSF'].errors && f['nomSF'].errors['required']">nom sous famille Model is required.</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="id_F">ID Famille:</label>
+        <input
+            formControlName="id_F"
+            id="id_F"
+            type="number"
+            [(ngModel)]="sousf.id_F"
+            class="form-control">
+        <div *ngIf="f['id_F'].touched && f['id_F'].invalid" class="alert alert-danger">
+            <div *ngIf="f['id_F'].errors && f['id_F'].errors['required']">id categorie is required.</div>
+        </div>
+      </div>
+
+
+      <button class="btn btn-primary" (click)="submit()" type="submit" [disabled]="!form.valid">Modifier</button>
+  </form>
+</div>
+
+</div>
+</div>
+

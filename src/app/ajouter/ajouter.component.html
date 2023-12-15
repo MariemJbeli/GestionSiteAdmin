@@ -1,0 +1,166 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Ajouter Article </div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="container">
+
+        <a href="#" routerLink="/liste" class="btn btn-primary">Retour</a>
+
+        <form [formGroup]="form" >
+
+            <div class="form-group">
+                <label for="desgnArt">Désignation:</label>
+                <input
+                    formControlName="desgnArt"
+                    id="desgnArt"
+                    type="text"
+                    class="form-control">
+                <div *ngIf="f['desgnArt'].touched && f['desgnArt'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['desgnArt'].errors && f['desgnArt'].errors['required']">desgnArt is required.</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="prix">Prix:</label>
+              <input
+                  formControlName="prix"
+                  id="prix"
+                  type="number"
+                  class="form-control">
+              <div *ngIf="f['prix'].touched && f['prix'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['prix'].errors && f['prix'].errors['required']">prix is required.</div>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ancienPrix">AncienPrix:</label>
+            <input
+                formControlName="ancienPrix"
+                id="ancienPrix"
+                type="number"
+                class="form-control">
+            <div *ngIf="f['ancienPrix'].touched && f['ancienPrix'].invalid" class="alert alert-danger">
+                <div *ngIf="f['ancienPrix'].errors && f['ancienPrix'].errors['required']">ancienPrix is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="etat">Etat:</label>
+          <div>
+
+            <input type="radio" id="active" formControlName="etat" value="active"
+                   checked >
+            <label for="active">Active</label>
+            <div *ngIf="f['etat'].touched && f['etat'].invalid" class="alert alert-danger">
+              <div *ngIf="f['etat'].errors && f['etat'].errors['required']">etat is required.</div>
+            </div>
+          </div>
+
+          <div>
+            <input type="radio" id="inactive" formControlName="etat" value="inactive" >
+            <label for="inactive">Inactive</label>
+            <div *ngIf="f['etat'].touched && f['etat'].invalid" class="alert alert-danger">
+              <div *ngIf="f['etat'].errors && f['etat'].errors['required']">etat is required.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="dureeGarantie">DureeGarantie:</label>
+          <input
+              formControlName="dureeGarantie"
+              id="dureeGarantie"
+              type="text"
+              class="form-control">
+          <div *ngIf="f['dureeGarantie'].touched && f['dureeGarantie'].invalid" class="alert alert-danger">
+              <div *ngIf="f['dureeGarantie'].errors && f['dureeGarantie'].errors['required']">dureeGarantie is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="refInternational">refInternational:</label>
+          <input
+              formControlName="refInternational"
+              id="refInternational"
+              type="text"
+              class="form-control">
+          <div *ngIf="f['refInternational'].touched && f['refInternational'].invalid" class="alert alert-danger">
+              <div *ngIf="f['refInternational'].errors && f['refInternational'].errors['required']">refInternational is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="livraison">Livraison:</label>
+
+
+
+            <input type="radio" id="domicile" formControlName="livraison" value="domicile"
+                  checked >
+            <label for="domicile">Domicile</label>
+            <div *ngIf="f['livraison'].touched && f['livraison'].invalid" class="alert alert-danger">
+              <div *ngIf="f['livraison'].errors && f['livraison'].errors['required']">livraison is required.</div>
+            </div>
+
+            <div>
+            <input type="file" name="image" id="image" formControlName="image">
+
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+        <div class="form-group">
+          <label for="categorie">Id_cat</label>
+          <div class="input-group input-group-sm mb-3">
+            <select  [(ngModel)]="selectedCat" formControlName="id_cat" >
+              <option [value]="null" disabled  >--select Categorie --</option>
+              <option *ngFor="let categ of categorie"
+              [value]="categ.id"
+              >{{categ.nom_categ}}</option>
+            </select>
+          </div>
+
+
+
+
+
+          <label for="famille">Id_F</label>
+          <div class="input-group input-group-sm mb-3" >
+            <select [(ngModel)]="selectedF" formControlName="id_F"    >
+              <option  value="0" disabled="true" selected="true">--select Famille --</option>
+              <ng-container *ngFor="let f of famille" >
+                <option   *ngIf='f.id_cat== selectedCat' [value]="f.id" >{{f.nomF}}</option>
+              </ng-container>
+            </select>
+          </div>
+
+          <label for="sf">Id_SF</label>
+          <div class="input-group input-group-sm mb-3">
+            <select formControlName="id_SF">
+              <option value="0">--select sous Famille --</option>
+              <ng-container *ngFor="let sousf of sf" >
+                <option *ngIf='sousf.id_F== selectedF' [value]="sousf.id" >{{sousf.nomSF}}</option>
+              </ng-container>
+            </select>
+          </div>
+
+
+
+
+
+        </div>
+
+        <button class="btn btn-primary" (click)="submit()" type="submit" [disabled]="!form.valid">Ajouter</button>
+        </form>
+      </div>
+
+
+
+    </div>
+</div>
+

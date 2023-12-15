@@ -1,0 +1,44 @@
+<mat-nav-list size="4">
+
+    <h2 matSubheader class="mt-2">Gestion Admin</h2>
+    <a mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active">
+         Dashboard
+    </a>
+
+    <a mat-list-item [matMenuTriggerFor]="lazyMenu">
+         Articles
+
+    </a>
+    <mat-menu #lazyMenu="matMenu">
+        <ng-template matMenuContent>
+        <button mat-menu-item routerLink="/ajouter" routerLinkActive="list-item-active">Ajouter</button>
+        <button mat-menu-item routerLink="/liste" routerLinkActive="list-item-active">Liste</button>
+        </ng-template>
+    </mat-menu>
+
+    <a mat-list-item routerLink="/categorie" routerLinkActive="list-item-active">
+         Catégories
+    </a>
+
+    <a mat-list-item routerLink="/famille" routerLinkActive="list-item-active">
+      Familles
+ </a>
+
+  <a mat-list-item routerLink="/sous-famille" routerLinkActive="list-item-active">
+    Sous Familles
+  </a>
+
+    <a mat-list-item routerLink="/model" routerLinkActive="list-item-active">
+       Modeles
+    </a>
+
+    <a mat-list-item routerLink="/caracteristique" routerLinkActive="list-item-active">
+        Caractéristiques
+    </a>
+
+    <a mat-list-item routerLink="/gestion-commande" routerLinkActive="list-item-active">
+        Commandes
+    </a>
+
+
+</mat-nav-list>

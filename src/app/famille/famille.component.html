@@ -1,0 +1,33 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Liste Famille </div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="container">
+
+
+      <a href="#" routerLink="/ajoutFamille" class="btn btn-success">Ajouter Famille</a>
+
+      <table class="table table-bordered" border="2">
+        <tr border="2">
+          <th>ID</th>
+          <th>Nom Famille</th>
+          <th>Id catégorie</th>
+
+          <th width="220px">Action</th>
+        </tr>
+        <tr *ngFor="let famille of familles">
+          <td>{{ famille.id }}</td>
+          <td>{{ famille.nomF }}</td>
+          <td>{{ famille.id_cat }}</td>
+
+          <td>
+            <a href="#" [routerLink]="[ famille.id, 'detailFamille']" class="btn btn-info">Détail</a>
+            <a href="#"  [routerLink]="[ famille.id, 'modifierFamille']" class="btn btn-primary">Modifier</a>
+            <button type="button" (click)="deleteFamille(famille.id)" class="btn btn-danger">Supprimer</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+

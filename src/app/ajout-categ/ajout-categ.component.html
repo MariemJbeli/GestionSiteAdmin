@@ -1,0 +1,32 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Ajouter Categorie </div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="container">
+
+        <a href="#" routerLink="/categorie" class="btn btn-primary">Retour</a>
+
+        <form [formGroup]="form" >
+
+            <div class="form-group">
+                <label for="nom_categ">nom categorie:</label>
+                <input
+                    formControlName="nom_categ"
+                    id="nom_categ"
+                    type="text"
+                    class="form-control">
+                <div *ngIf="f['nom_categ'].touched && f['nom_categ'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['nom_categ'].errors && f['nom_categ'].errors['required']">nom_categ is required.</div>
+                </div>
+            </div>
+
+
+            <button class="btn btn-primary" (click)="submit()" type="submit" [disabled]="!form.valid">Ajouter</button>
+        </form>
+      </div>
+
+
+
+    </div>
+</div>
+
+

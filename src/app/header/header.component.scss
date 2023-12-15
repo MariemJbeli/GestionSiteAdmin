@@ -1,0 +1,32 @@
+mat-toolbar{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #f7f7f7;
+}
+ul{
+    li{
+        list-style: none;
+    }
+}
+button{
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.user{
+    font-size: 14px;
+}
+
+
+::ng-deep{
+    .mat-menu-content{
+        width: 160px;
+    }
+}
+img {
+   
+    border-radius: 4%;
+    padding: 5%;
+    width: 10%;
+  }

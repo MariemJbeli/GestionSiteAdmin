@@ -1,0 +1,22 @@
+<div class="container-fluid page">
+    <div class="page__box p-3 mt-2"> Dhashboard </div>
+    <div class="page__content shadow p-3 position-relative">
+      <strong class="art"> Les Articles</strong>
+      <div class="container">
+        <h2 *ngIf="articles && articles.length > 0 "></h2>
+        <div class="row row-cols-1 row-cols-md-4">
+          <div class="col mb-4" *ngFor="let article of articles">
+            <div class="card">
+              <img class="image"  src="/assets/image/{{article.image.slice(12)}}" class="card-img-top" alt="Lights">
+              <div class="card-body">
+                <h5 class="card-title">{{ article.desgnArt }}</h5>
+                <p class="card-text">{{ article.refInternational }}</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        </div>
+    </div>
+</div>

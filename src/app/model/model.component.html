@@ -1,0 +1,34 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Liste Model </div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="container">
+
+
+      <a href="#" routerLink="/ajoutModel" class="btn btn-success">Ajouter Model</a>
+
+      <table class="table table-bordered" border="2">
+        <tr border="2">
+          <th>ID</th>
+          <th>Designation Modele</th>
+          <th>Id Catégorie</th>
+
+          <th width="220px">Action</th>
+        </tr>
+        <tr *ngFor="let model of models">
+          <td>{{ model.id }}</td>
+          <td>{{ model.desgnModele }}</td>
+          <td>{{ model.id_cat}}</td>
+
+
+          <td>
+            <a href="#" [routerLink]="[ model.id, 'detailModel']" class="btn btn-info">Détail</a>
+            <a href="#"  [routerLink]="[ model.id, 'modifierModel']" class="btn btn-primary">Modifier</a>
+            <button type="button" (click)="deleteModel(model.id)" class="btn btn-danger">Supprimer</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+

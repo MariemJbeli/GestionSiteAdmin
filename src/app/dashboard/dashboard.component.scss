@@ -1,0 +1,39 @@
+.page {
+  color: white ;
+  padding: 0 1rem;
+  background: #f1f5f9;
+  &__box{
+      padding-top: 15px;
+      padding-left: 20px;
+      padding-bottom: 1px;
+      min-height: 50px;
+      background: #77174a;
+      margin: 0 -1rem;
+      font-size: 20px;
+  }
+
+}
+.form-group{
+  color: black;
+
+  font-size: 100% ;
+  margin-right: 50%;
+}
+
+.art{
+  font-size: 200%;
+  color:#77174a;
+  font-family:'Courier New', Courier, monospace;
+  margin-left: 30%;
+}
+.card-title, .card-text{
+  font-size: 150%;
+  color:#9c0a58;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+}
+.card{
+ font-size: 100%;
+}
+

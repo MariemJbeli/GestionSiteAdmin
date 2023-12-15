@@ -1,0 +1,32 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2"> Gestion Commande </div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="container">
+
+      <table class="table table-bordered" border="2">
+        <tr border="2">
+          <th>code</th>
+          <th>date</th>
+
+          <th> client</th>
+
+          <th width="220px">Action</th>
+        </tr>
+        <tr  *ngFor="let com of com"  >
+          <td>{{ com.id}}</td>
+          <td>{{ com.date }}</td>
+          <td > {{com.id_client }}</td>
+
+
+          <td>
+            <a href="#" [routerLink]="[ com.id, 'detailCommande']" class="btn btn-info">Détail</a>
+
+            <button type="button" (click)="deleteCom(com.id)" class="btn btn-danger">Supprimer</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+

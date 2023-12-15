@@ -1,0 +1,35 @@
+<div class="container-fluid page">
+    <div class="page__box p-3 mt-2"> Caracteristique </div>
+    <div class="page__content shadow p-3 position-relative">
+
+      <a href="#" routerLink="/ajoutCaract" class="btn btn-success">Ajouter Caractéristique</a>
+
+      <table class="table table-bordered" border="2">
+        <tr border="2">
+          <th>ID</th>
+          <th>Désignation Caracteristique</th>
+          <th>Libelle</th>
+          <th>Id Modele</th>
+
+          <th width="220px">Action</th>
+        </tr>
+        <tr *ngFor="let caract of caracts">
+          <td>{{ caract.id }}</td>
+          <td>{{ caract.desgnCaract }}</td>
+          <td>{{ caract.libelle }}</td>
+          <td>{{caract.id_mod}}</td>
+
+          <td>
+            <a href="#" [routerLink]="[ caract.id, 'detailCaract']" class="btn btn-info">Détail</a>
+            <a href="#"  [routerLink]="[ caract.id, 'modifierCaract']" class="btn btn-primary">Modifier</a>
+            <button type="button" (click)="deleteCaract(caract.id)" class="btn btn-danger">Supprimer</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+
+
+
